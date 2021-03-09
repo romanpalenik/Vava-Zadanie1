@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controler.newInvoice">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="545.0" layoutY="409.0" mnemonicParsing="false" onAction="#createNewInvoice" prefHeight="17.0" prefWidth="121.0" text="Spravit fakturu" />
+            <TableView fx:id="table" layoutX="427.0" layoutY="177.0" prefHeight="202.0" prefWidth="237.0" />
+            <Label layoutX="32.0" layoutY="91.0" text="Datum" />
+            <Label layoutX="32.0" layoutY="144.0" text="Vyber si zakaznika" />
+            <ComboBox fx:id="comboBoxProducts" layoutX="211.0" layoutY="183.0" prefHeight="26.0" prefWidth="137.0" />
+            <Label layoutX="211.0" layoutY="144.0" text="Vyber si produkt" />
+            <ComboBox fx:id="comboBoxNames" layoutX="31.0" layoutY="183.0" prefHeight="26.0" prefWidth="122.0" />
+            <TextField fx:id="productsCount" layoutX="218.0" layoutY="380.0" prefHeight="26.0" prefWidth="44.0" />
+            <Label fx:id="priceForAllLabel" layoutX="356.0" layoutY="380.0" prefHeight="26.0" prefWidth="36.0" text="cena spolu" />
+            <Label layoutX="277.0" layoutY="385.0" text="Cena spolu" />
+            <Label layoutX="427.0" layoutY="144.0" text="Faktura " />
+            <Button layoutX="427.0" layoutY="409.0" mnemonicParsing="false" onAction="#addNewProduct" prefHeight="26.0" prefWidth="96.0" stylesheets="@../../../button.css" text="Pridat" />
+            <DatePicker fx:id="date" layoutX="131.0" layoutY="86.0" />
+            <Label layoutX="36.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="36.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="36.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="104.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="104.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="104.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="218.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="218.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="218.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="286.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="286.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="286.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label prefHeight="71.0" prefWidth="711.0" style="-fx-background-color: #42bcf0;" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
