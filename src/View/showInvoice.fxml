@@ -23,20 +23,21 @@
                 <Label layoutX="255.0" layoutY="207.0" prefHeight="26.0" prefWidth="54.0" text="Meno" />
                 <Label layoutX="255.0" layoutY="259.0" prefHeight="26.0" prefWidth="70.0" text="Mesto" />
                 <Label layoutX="255.0" layoutY="316.0" prefHeight="26.0" prefWidth="54.0" text="PSC" />
-                <Label fx:id="nameOfClient" layoutX="356.0" layoutY="207.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-                <Label layoutX="356.0" layoutY="259.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-                <Label fx:id="PSC" layoutX="356.0" layoutY="316.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+                <Label fx:id="nameOfClient" layoutX="317.0" layoutY="207.0" prefHeight="26.0" prefWidth="104.0" text="Label" />
+                <Label fx:id="city" layoutX="317.0" layoutY="259.0" prefHeight="26.0" prefWidth="104.0" text="Label" />
+                <Label fx:id="PSC" layoutX="317.0" layoutY="316.0" prefHeight="26.0" prefWidth="104.0" text="Label" />
                 <Label prefHeight="71.0" prefWidth="711.0" style="-fx-background-color: #42bcf0;" />
             <Label layoutX="255.0" layoutY="171.0" text="Informacie" />
             <Label layoutX="255.0" layoutY="373.0" text="Adresa" />
-            <Label fx:id="address" layoutX="356.0" layoutY="373.0" text="Label" />
-            <Label fx:id="allPrice" layoutX="549.0" layoutY="389.0" text="Celkova suma" />
+            <Label fx:id="address" layoutX="317.0" layoutY="373.0" prefHeight="16.0" prefWidth="104.0" text="Label" />
+            <Label fx:id="allPrice" layoutX="543.0" layoutY="389.0" prefHeight="16.0" prefWidth="70.0" text="Celkova suma" />
             <Label layoutX="20.0" layoutY="130.0" text="Vyber si fakturu" />
             <TableView fx:id="tableViewWithFactures" layoutX="24.0" layoutY="172.0" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="countColumn" prefWidth="198.0" text="C1" />
+                <TableColumn fx:id="countColumn" prefWidth="199.0" text="C1" />
               </columns>
             </TableView>
+            <Label layoutX="437.0" layoutY="389.0" text="Celkova cena" />
             </children>
         </AnchorPane>
     </children>

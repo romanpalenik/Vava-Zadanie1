@@ -28,6 +28,9 @@
             <Label layoutX="121.0" layoutY="242.0" text="Cena" />
             <ComboBox fx:id="comboBoxProducts" layoutX="121.0" layoutY="44.0" prefWidth="150.0" />
             <Label fx:id="labelProductName" layoutX="14.0" layoutY="44.0" prefHeight="26.0" prefWidth="76.0" text="Product" />
+            <Label fx:id="nameWarning" layoutX="306.0" layoutY="134.0" text="Label" textFill="RED" />
+            <Label fx:id="infoWarning" layoutX="306.0" layoutY="206.0" text="Label" textFill="RED" />
+            <Label fx:id="priceWarning" layoutX="306.0" layoutY="271.0" text="Label" textFill="RED" />
             </children></AnchorPane>
     </children>
 </GridPane>

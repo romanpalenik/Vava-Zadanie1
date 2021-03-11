@@ -24,29 +24,33 @@
             <Button layoutX="545.0" layoutY="409.0" mnemonicParsing="false" onAction="#createNewInvoice" prefHeight="17.0" prefWidth="121.0" text="Spravit fakturu" />
             <TableView fx:id="table" layoutX="427.0" layoutY="177.0" prefHeight="202.0" prefWidth="237.0" />
             <Label layoutX="32.0" layoutY="91.0" text="Datum" />
-            <Label layoutX="32.0" layoutY="144.0" text="Vyber si zakaznika" />
-            <ComboBox fx:id="comboBoxProducts" layoutX="211.0" layoutY="183.0" prefHeight="26.0" prefWidth="137.0" />
-            <Label layoutX="211.0" layoutY="144.0" text="Vyber si produkt" />
-            <ComboBox fx:id="comboBoxNames" layoutX="31.0" layoutY="183.0" prefHeight="26.0" prefWidth="122.0" />
-            <TextField fx:id="productsCount" layoutX="218.0" layoutY="380.0" prefHeight="26.0" prefWidth="44.0" />
-            <Label fx:id="priceForAllLabel" layoutX="356.0" layoutY="380.0" prefHeight="26.0" prefWidth="36.0" text="cena spolu" />
-            <Label layoutX="277.0" layoutY="385.0" text="Cena spolu" />
+            <Label fx:id="chooseClient" layoutX="28.0" layoutY="128.0" prefHeight="16.0" prefWidth="158.0" text="Povinne pole" textFill="RED" />
+            <ComboBox fx:id="comboBoxProducts" layoutX="211.0" layoutY="183.0" onAction="#comboBoxProducts" prefHeight="26.0" prefWidth="137.0" promptText="Product" />
+            <Label fx:id="chooseProduct" layoutX="211.0" layoutY="128.0" text="Povinne pole" textFill="RED" />
+            <ComboBox fx:id="comboBoxNames" layoutX="31.0" layoutY="183.0" onAction="#setClientToSelected" prefHeight="26.0" prefWidth="151.0" promptText="Zakaznik" />
+            <TextField fx:id="productsCount" layoutX="136.0" layoutY="385.0" prefHeight="26.0" prefWidth="44.0" />
+            <Label fx:id="priceForAllLabel" layoutX="290.0" layoutY="385.0" prefHeight="26.0" prefWidth="61.0" text="cena spolu" />
+            <Label layoutX="209.0" layoutY="390.0" text="Cena spolu" />
             <Label layoutX="427.0" layoutY="144.0" text="Faktura " />
-            <Button layoutX="427.0" layoutY="409.0" mnemonicParsing="false" onAction="#addNewProduct" prefHeight="26.0" prefWidth="96.0" stylesheets="@../../../button.css" text="Pridat" />
+            <Button layoutX="427.0" layoutY="409.0" mnemonicParsing="false" onAction="#addNewProduct" prefHeight="26.0" prefWidth="96.0" text="Pridat" />
             <DatePicker fx:id="date" layoutX="131.0" layoutY="86.0" />
-            <Label layoutX="36.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="36.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="36.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="104.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="104.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="104.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="218.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="218.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="218.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="286.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="286.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
-            <Label layoutX="286.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label layoutX="36.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Meno" />
+            <Label layoutX="36.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Adresa" />
+            <Label layoutX="36.0" layoutY="335.0" prefHeight="26.0" prefWidth="54.0" text="PSC" />
+            <Label fx:id="info_client_name" layoutX="104.0" layoutY="239.0" prefHeight="26.0" prefWidth="73.0" text="Label" />
+            <Label fx:id="info_client_address" layoutX="104.0" layoutY="287.0" prefHeight="26.0" prefWidth="73.0" text="Label" />
+            <Label fx:id="info_client_PSC" layoutX="104.0" layoutY="335.0" prefHeight="26.0" prefWidth="73.0" text="Label" />
+            <Label layoutX="218.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Nazov" />
+            <Label layoutX="218.0" layoutY="287.0" prefHeight="26.0" prefWidth="54.0" text="Popis" />
+            <Label layoutX="218.0" layoutY="335.0" prefHeight="26.0" prefWidth="85.0" text="Cena za kus" />
+            <Label fx:id="info_product_name" layoutX="286.0" layoutY="239.0" prefHeight="26.0" prefWidth="54.0" text="Label" />
+            <Label fx:id="info_product_info" layoutX="286.0" layoutY="287.0" prefHeight="26.0" prefWidth="131.0" text="Label" />
+            <Label fx:id="info_product_price" layoutX="314.0" layoutY="335.0" prefHeight="26.0" prefWidth="96.0" text="Label" />
             <Label prefHeight="71.0" prefWidth="711.0" style="-fx-background-color: #42bcf0;" />
+            <Label layoutX="31.0" layoutY="385.0" prefHeight="26.0" prefWidth="108.0" text="Zadaj pocet:" />
+            <Label fx:id="requiredDate" layoutX="351.0" layoutY="91.0" text="Povinne pole" textFill="RED" />
+            <Label layoutX="28.0" layoutY="152.0" text="Vyber si zakaznika" />
+            <Label layoutX="212.0" layoutY="152.0" text="Vyber si produkt" />
          </children>
       </AnchorPane>
    </children>

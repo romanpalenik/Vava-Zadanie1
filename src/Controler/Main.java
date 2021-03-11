@@ -16,7 +16,6 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Super Faktúra");
-//        primaryStage.getIcons().add(new Image("../image.png"));
         primaryStage.show();
     }
 

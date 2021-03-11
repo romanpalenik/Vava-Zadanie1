@@ -23,13 +23,17 @@
             <TextField fx:id="name" layoutX="121.0" layoutY="105.0" />
             <TextField fx:id="address" layoutX="121.0" layoutY="177.0" />
             <TextField fx:id="PSC" layoutX="121.0" layoutY="348.0" />
-            <Label layoutX="121.0" layoutY="76.0" text="Meno" />
+            <Label layoutX="121.0" layoutY="76.0" text="Meno a preizvisko" />
             <Label layoutX="121.0" layoutY="150.0" text="Adresa" />
-            <Label layoutX="116.0" layoutY="313.0" text="PSC" />
+            <Label layoutX="126.0" layoutY="315.0" text="PSC" />
             <ComboBox fx:id="comboBoxNames" layoutX="123.0" layoutY="40.0" prefWidth="150.0" />
             <Label fx:id="labelClientName" layoutX="14.0" layoutY="40.0" prefHeight="26.0" prefWidth="74.0" text="Zakaznik" />
             <Label layoutX="121.0" layoutY="228.0" text="Mesto" />
             <TextField fx:id="city" layoutX="121.0" layoutY="267.0" />
+            <Label fx:id="nameWarning" layoutX="305.0" layoutY="110.0" text="Label" textFill="RED" />
+            <Label fx:id="addressWarning" layoutX="305.0" layoutY="182.0" text="Label" textFill="RED" />
+            <Label fx:id="cityWarning" layoutX="305.0" layoutY="272.0" text="Label" textFill="RED" />
+            <Label fx:id="PSCWarning" layoutX="305.0" layoutY="353.0" text="Label" textFill="RED" />
             </children></AnchorPane>
     </children>
 </GridPane>

@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 
 import java.util.*;
 
-public class Database extends Exception {
+public class Database extends Exception{
 
     List<Invoice> Invoice = new ArrayList<>();
     List<Client> Clients = new ArrayList<>();
@@ -16,7 +16,7 @@ public class Database extends Exception {
 
 
     public Database() {
-        Client client = new Client("Roman", "Hlboka 32", "93401", "Levice");
+        Client client = new Client("Roman Palenik", "Hlboka 32", "93401", "Levice");
         Product product = new Product("PC", "Jako cosi mam",20);
         Clients.add(client);
         Products.add(product);
@@ -50,6 +50,10 @@ public class Database extends Exception {
 
     }
 
+    /**
+     * search array of clients
+     * @return all clients names
+     */
     public ObservableList<String> findAllNames()
     {
         ObservableList<String> clientsNames = FXCollections.observableArrayList();
@@ -61,6 +65,10 @@ public class Database extends Exception {
         return clientsNames;
         }
 
+    /**
+     * search all products
+      * @return products names
+     */
     public ObservableList<String> findAllProducts()
     {
         ObservableList<String> ProductsNames = FXCollections.observableArrayList();
@@ -72,6 +80,12 @@ public class Database extends Exception {
         return ProductsNames;
     }
 
+    /**
+     * find price to product
+     * @param nameOfProduct
+     * @return price of the product
+     * @throws Exception
+     */
     public int findPriceToProduct(String nameOfProduct) throws Exception {
         for (Product product : Products) {
 
@@ -87,6 +101,12 @@ public class Database extends Exception {
 
     }
 
+    /**
+     * find client by name
+     * @param name of the client
+     * @return wanted client
+     * @throws Exception if there is no client with that name
+     */
     public Client findClientByName(String name) throws Exception {
 
         for (Client client : Clients) {
@@ -102,7 +122,12 @@ public class Database extends Exception {
 
 
     }
-
+    /**
+     * find product by name
+     * @param name of the product
+     * @return wanted client
+     * @throws Exception if there is no client with that name
+     */
     public Product findProductByName(String name) throws Exception {
 
         for (Product product : Products) {
@@ -138,7 +163,8 @@ public class Database extends Exception {
     public List<Model.Invoice> getInvoice() {
         return Invoice;
     }
-}
 
+
+}
 
 

@@ -2,17 +2,18 @@ package Model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Invoice {
 
-    private LocalDate date;
+    private Date date;
     private Client client;
     private List<OneRecord> products = new ArrayList<OneRecord>();
     private int ico = 0;
     private int wholePrice = 0;
 
-    public Invoice(LocalDate date, Client client, List<OneRecord> products, int ico, int wholePrice) {
+    public Invoice(Date date, Client client, List<OneRecord> products, int ico, int wholePrice) {
         this.date = date;
         this.client = client;
         this.products = products;
@@ -20,11 +21,11 @@ public class Invoice {
         this.wholePrice = wholePrice;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

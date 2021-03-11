@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.regex.Pattern;
+
 
 public class newProduct extends MainView{
 
@@ -21,10 +23,22 @@ public class newProduct extends MainView{
     private Label labelProductName;
     @FXML
     private ComboBox comboBoxProducts;
+    @FXML
+    private Label nameWarning;
+    @FXML
+    private Label infoWarning;
+    @FXML
+    private Label priceWarning;
 
-    Product product;
+
+    private Product product;
 
     public void initialize() {
+
+        nameWarning.setVisible(false);
+        infoWarning.setVisible(false);
+        priceWarning.setVisible(false);
+
 
         if (mode == 0) {
             labelProductName.setVisible(false);
@@ -32,26 +46,35 @@ public class newProduct extends MainView{
         }
         else {
             setWindowToEditMode();
+            EventHandler<ActionEvent> event = new EventHandler<ActionEvent> (){
 
+                public void handle(ActionEvent actionEvent) {
+                    try {
+                        fillClientsNames();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+
+            comboBoxProducts.setOnAction(event);
         }
 
-        EventHandler<ActionEvent> event = new EventHandler<ActionEvent> (){
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                try {
-                    fillClientsNames();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        };
 
-        comboBoxProducts.setOnAction(event);
     }
 
-
+    /**
+     * validate all parameters and choice action by mode of window, edit or create product
+     */
     public void choiceCreateEdit()
     {
+        nameWarning.setVisible(false);
+        infoWarning.setVisible(false);
+        priceWarning.setVisible(false);
+        if( !validateName() || !validateInfo() || !validatePrice() )
+        {
+            return;
+        }
         if (mode == 0)
         {
             createNewProduct();
@@ -63,6 +86,9 @@ public class newProduct extends MainView{
 
     }
 
+    /**
+     * change information about product if it's edited
+     */
     private void editProduct() {
         if (!name.getText().equals("")){
             this.product.setName(name.getText());
@@ -80,6 +106,9 @@ public class newProduct extends MainView{
 
     }
 
+    /**
+     * show edit widget
+     */
     private void setWindowToEditMode() {
 
         labelProductName.setVisible(true);
@@ -87,6 +116,9 @@ public class newProduct extends MainView{
         comboBoxProducts.setItems(database.findAllProducts());
     }
 
+    /**
+     * create new product and save it to database
+     */
     public void createNewProduct()
     {
         Product newProduct = new Product(name.getText(), information.getText(),Integer.parseInt(price.getText()));
@@ -94,13 +126,78 @@ public class newProduct extends MainView{
         stage.close();
     }
 
+
+    /**
+     * if is window in edit mode, it fills information of client to the text field as promt texts
+     * @throws Exception
+     */
     public void fillClientsNames() throws Exception {
 
         this.product = database.findProductByName((String) comboBoxProducts.getValue());
         name.setPromptText(product.getName());
         information.setPromptText(product.getInformation());
-        price.setPromptText(String.valueOf(product.getPrice()));
+        price.setPromptText(Integer.toString(product.getPrice()));
     }
 
+    /**
+     * Validate name parameter
+     * show warning if it wrong
+     */
+    public boolean validateName()
+    {
+        boolean isValid = false;
+        if (!nameWarning.getText().equals("")) {
+            isValid = Pattern.matches("[A-z]* [A-z]*",name.getText());
 
+        } else {
+            nameWarning.setText("Nezadany parameter");
+            nameWarning.setVisible(true);
+            return false;
+        }
+        if(!isValid) {
+            nameWarning.setText("Nespravne zadany parameter");
+            nameWarning.setVisible(true);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Validate information parameter
+     * show warning if it wrong
+     * @return
+     */
+    public boolean validateInfo()
+    {
+
+        if (information.getText().equals("")) {
+            infoWarning.setText("Nezadany parameter");
+            infoWarning.setVisible(true);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Validate name parameter
+     * show warning if it wrong
+     * @return
+     */
+    public boolean validatePrice()
+    {
+        boolean isValid = false;
+        if (!price.getText().equals("")) {
+            isValid = Pattern.matches("[0-9]*",price.getText());
+        } else {
+            priceWarning.setText("Nezadany parameter");
+            priceWarning.setVisible(true);
+            return false;
+        }
+        if(!isValid) {
+            priceWarning.setText("Nespravne zadany parameter");
+            priceWarning.setVisible(true);
+            return false;
+        }
+        return true;
+    }
 }
